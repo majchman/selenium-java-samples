@@ -41,6 +41,7 @@ public class DropdownPageTest {
     public void selectOption1_option1IsSelected() {
         final String selectedOptionText = "Option 1";
 
+        dropdownPage.open();
         dropdownPage.selectOption1();
 
         assertThat( "Option 1 should be selected in the dropdown list",
@@ -52,6 +53,7 @@ public class DropdownPageTest {
     public void selectOption2_option2IsSelected() {
         final String selectedOptionText = "Option 2";
 
+        dropdownPage.open();
         dropdownPage.selectOption2();
 
         assertThat( "Option 2 should be selected in the dropdown list",
