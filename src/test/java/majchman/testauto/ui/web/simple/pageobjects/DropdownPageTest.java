@@ -1,4 +1,4 @@
-package majchman.testauto.ui.web.pageobjects.simple;
+package majchman.testauto.ui.web.simple.pageobjects;
 
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package majchman.testauto.ui.web;
+package majchman.testauto.ui.web.advanced;
 
 import org.junit.*;
 import org.openqa.selenium.By;
