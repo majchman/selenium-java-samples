@@ -65,7 +65,7 @@ public class ChromeDriverServiceTest {
         driver.get( url );
 
         WebElement element = driver.findElement( selector );
-        assertThat( String.format( "The page under %s should have the title >%s<", url, pageTitle),
+        assertThat( String.format( "The page under %s should have the title >%s<", url, pageTitle ),
                 element.getText(),
                 is( equalTo( pageTitle ) ) );
     }

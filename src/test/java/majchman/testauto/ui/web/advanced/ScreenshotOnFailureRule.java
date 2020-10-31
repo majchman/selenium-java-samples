@@ -21,15 +21,15 @@ public class ScreenshotOnFailureRule extends TestWatcher {
 
     @Override
     protected void failed( Throwable e, Description description ) {
-        File targetFile = createTargetFile(description);
+        File targetFile = createTargetFile( description );
 
-        TakesScreenshot screenshot = ((TakesScreenshot) driver);
+        TakesScreenshot screenshot = ( ( TakesScreenshot ) driver );
         File screenshotFile = screenshot.getScreenshotAs( OutputType.FILE );
 
         try {
             FileUtils.copyFile( screenshotFile, targetFile );
         } catch ( IOException ioException ) {
-            throw new RuntimeException(ioException);
+            throw new RuntimeException( ioException );
         }
     }
 
@@ -43,10 +43,10 @@ public class ScreenshotOnFailureRule extends TestWatcher {
 //        driver.quit(); //or driver.close()
 //    }
 
-    private File createTargetFile( Description description) {
+    private File createTargetFile( Description description ) {
         String methodName = description.getMethodName();
         String testClassName = description.getTestClass().getSimpleName();
-        String fileName = String.format("%s-%s-%d.png", testClassName, methodName, System.currentTimeMillis());
+        String fileName = String.format( "%s-%s-%d.png", testClassName, methodName, System.currentTimeMillis() );
 
         return new File( screenshotDir + fileName );
     }
